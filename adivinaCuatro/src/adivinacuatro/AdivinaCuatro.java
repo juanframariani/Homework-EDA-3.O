@@ -7,17 +7,28 @@
 */
 package adivinacuatro;
 
+
+import java.util.Scanner;
+
+
 /**
  *
  * @author sanfrarow
  */
 public class AdivinaCuatro {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+        
+        Scanner entrada = new Scanner(System.in);
+
+        //genera un numero random y lo muestra por pantalla.
+        //el largo de la cadena se puede especificar. en este caso, dejamos 4 hardcodeado
+        String numeroGenerado = GenerarNumeroRandom.generarNumero(4);
+        
+        System.out.println(numeroGenerado);
+       
+
+        
     }
     
 }
