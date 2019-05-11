@@ -18,49 +18,35 @@ import java.util.Scanner;
 public class AdivinaCuatro {
 
     public static void main(String[] args) {
+    
+        int opcion = 0;
         
         Scanner entrada = new Scanner(System.in);
-        int aciertos = 0;
-        int regular = 0;
-        
-        //genera un numero random y lo muestra por pantalla.
-        //el largo de la cadena se puede especificar. en este caso, dejamos 4 hardcodeado
-        String numeroGenerado = GenerarNumeroRandom.generarNumero(4);
-        
-        //Muestra el numero generado solo para probar -- ELIMINAR DESPUES
-        System.out.println(numeroGenerado);
-       
-        System.out.println("Ingrese un numero de 4 cifras");
-        
-        while(true){
             
-            String cadena = entrada.nextLine();
-            
-            //bucle for anidado para revisar los aciertos
-            for (int i = 0; i < cadena.length(); i++) {
-                for (int j = 0; j < cadena.length(); j++) {
-                    if (cadena.charAt(i) == numeroGenerado.charAt(j) && (i == j)) {
-                        aciertos++;
-                    }
-                }
-            }
-            //bucle for para revisar si el numero esta contenido pero en distinta posicion
-            for (int i = 0; i < cadena.length(); i++) {
-                if (numeroGenerado.indexOf(cadena.charAt(i)) != -1 && !(cadena.charAt(i) == numeroGenerado.charAt(i))) {
-                        regular++;
-                }
-            }
-            
-            if (cadena.equals(numeroGenerado)) {
-                System.out.println("ADIVINO");
+    while(opcion != 3) {
+        System.out.println("Ingrese como desea jugar" +
+        "\n 1- Adivine un número generado por el ordenador"+
+        "\n 2- Ingrese un número para que el ordenador adivine"+
+        "\n 3- Salir");
+        
+        opcion = entrada.nextInt();
+        
+        switch(opcion){
+            case 1:
+                adivinaUsuario.adivinador();
                 break;
-            } else {
-                System.out.println("Aciertos: " + aciertos + " - Regular: " + regular);
-                System.out.println("Vuelva a intentar:");
-                aciertos = 0;
-                regular = 0;
-            } 
-        }  
-        
-    }    
+         
+            case 2:
+                adivinaOrdenador.adivinador();
+                break;
+            
+            case 3:
+                System.out.println("Gracias por jugar");
+             
+            default:
+                System.out.println("Opcion Incorrecta.");
+        }   
+    }   
+
+    }
 }
