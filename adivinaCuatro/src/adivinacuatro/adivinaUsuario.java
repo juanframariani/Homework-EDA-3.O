@@ -14,6 +14,7 @@ import java.util.Scanner;
 public class adivinaUsuario {
     
   static void adivinador(){
+      
         Scanner entrada = new Scanner(System.in);
         int aciertos = 0;
         int regular = 0;
@@ -23,7 +24,7 @@ public class adivinaUsuario {
         
         //genera un numero random y lo muestra por pantalla.
         //el largo de la cadena se puede especificar. en este caso, dejamos 4 hardcodeado
-        String numeroGenerado = GenerarNumeroRandom.generarNumero(4);
+        String numeroGenerado = Funciones.generarNumero(4);
         
         //Muestra el numero generado solo para probar -- ELIMINAR DESPUES
         System.out.println(numeroGenerado);

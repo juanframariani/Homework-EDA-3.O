@@ -42,7 +42,7 @@ public class AdivinaCuatro {
             
             case 3:
                 System.out.println("Gracias por jugar");
-             
+                break;
             default:
                 System.out.println("Opcion Incorrecta.");
         }   
