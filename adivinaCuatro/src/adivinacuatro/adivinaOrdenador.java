@@ -21,11 +21,10 @@ public class adivinaOrdenador {
         int[] regular = new int[300];
         int contador = 0;
         int numeroGeneradoEntero;
-        int numeroGeneradoEnteroAux;
         String numeroGeneradoAux = "";
 
         String[] numeroGenerado = new String[300];
-        //numeroGenerado[0] = "7234";
+        
         numeroGenerado[0] = Funciones.generarNumero(4);
         System.out.println("Es el numero: " + numeroGenerado[contador] + " ?");
 
@@ -39,8 +38,8 @@ public class adivinaOrdenador {
         while (true) {
 
             numeroGeneradoEntero++;
-            if (numeroGeneradoEntero > 9876) {
-                numeroGeneradoEntero = 1234;
+            if (numeroGeneradoEntero > 9876) {      //si llega al numero maximo de 4 cifras sin repetir
+                numeroGeneradoEntero = 1234;        //vuelve al primer numero posible
             }
             numeroGeneradoAux = Integer.toString(numeroGeneradoEntero);
             System.out.println(numeroGeneradoAux);
@@ -54,9 +53,7 @@ public class adivinaOrdenador {
 
                         } else {
                             regular[contador + 1]++;
-
                         }
-
                     }
                 }
                 if (aciertos[contador] != aciertos[contador + 1] && regular[contador] != regular[contador + 1]) {
@@ -73,8 +70,8 @@ public class adivinaOrdenador {
                         if (!flag) {
                             contador--;
                         }
-                    
                     }
+                    
                     if (flag) {
                         numeroGenerado[contador] = numeroGeneradoAux;
                         System.out.println(numeroGenerado[contador]);
@@ -83,24 +80,21 @@ public class adivinaOrdenador {
                             System.out.println("Regular: ");
                             regular[contador] = entrada.nextInt();
                     }
-                        
-
                 }
             }
+            
             if (aciertos[contador] == 4) {
                 System.out.println("Adivinaste");
                 break;
             }
-            //  break;
         }
 
-        //numeroGeneradoAux = adivinarNumero(numeroGenerado, aciertos, regular);
         System.out.println(numeroGenerado[contador]);
         System.out.println(numeroGeneradoAux);
     }
 
     public static boolean comparaAnteriores(int contador,int[] acierto, int[] regular,String[] numeros,String numero){
-    boolean result = true;
+    boolean resultado = true;
     int[] aciertos = new int[300];
     int[] regulares = new int [300];
             for (int i = 0; i < contador; i++) {
@@ -115,19 +109,16 @@ public class adivinaOrdenador {
                         }
                     }
                 }
-//                System.out.println(numero +" "+numeros[i] + "   Bien : "+aciertos[i] + " Regulares : "+regulares[i]);
-//                System.out.println(acierto[i]+"  "+regular[i]);
 
                 if (aciertos[i] != acierto[i] || regulares[i] != regular[i]) {
                     return  false;
-                    //break;
                 }
                 else if(i == contador-1){
-                return result;
+                return resultado;
                 }
             }
         
-    return result;
+    return resultado;
     }
 
 }

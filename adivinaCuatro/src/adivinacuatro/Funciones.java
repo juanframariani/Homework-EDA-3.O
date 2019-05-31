@@ -13,7 +13,7 @@ import java.util.Scanner;
  */
 public class Funciones {
     
-    //genera una cadena aleatoria de 1 a 10 cifras, sin repetir
+//genera una cadena aleatoria de 1 a 10 cifras, sin repetir
 static String generarNumero(int length){
     
             String numeroGenerado = "";
@@ -44,8 +44,8 @@ static String generarNumero(int length){
             return numeroGenerado;
         }
     
-    static boolean validarNumeroOrdenador(String numero){
-        
+    //Funcion para validar que los numeros que adivine el ordenador no se repitan
+    static boolean validarNumeroOrdenador(String numero){ 
         for (int i = 0; i < numero.length(); i++) {
             for (int j = 0; j < numero.length(); j++) {
                 if (i != j && numero.charAt(i) == numero.charAt(j)) {
@@ -53,7 +53,6 @@ static String generarNumero(int length){
                 }
             }
         }
-    
     return true;  
     }
 }

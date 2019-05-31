@@ -25,10 +25,7 @@ public class adivinaUsuario {
         //genera un numero random y lo muestra por pantalla.
         //el largo de la cadena se puede especificar. en este caso, dejamos 4 hardcodeado
         String numeroGenerado = Funciones.generarNumero(4);
-        
-        //Muestra el numero generado solo para probar -- ELIMINAR DESPUES
-        System.out.println(numeroGenerado);
-       
+          
         while(true){
             String cadena = entrada.nextLine();
             
@@ -56,7 +53,6 @@ public class adivinaUsuario {
                 aciertos = 0;
                 regular = 0;
             } 
-        }  
-        
+        }    
   }    
 }    
